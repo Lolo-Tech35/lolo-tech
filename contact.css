@@ -1,0 +1,94 @@
+/* --- VARIABLES ET RESET --- */
+:root {
+    --text-blue: #69faff;
+    --accent-green: #33ff33;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: var(--text-blue);
+    /* On remet l'image de fond ici */
+    background: #fff url('arriere_plan_vide_lolotech.png') no-repeat center center fixed;
+    background-size: cover;
+}
+.logo {
+    width: 300px; /* Un peu plus petit pour la lisibilité */
+    height: auto;
+    margin-top: 20px;
+}
+/* --- NAVIGATION --- */
+.navbar {
+    background: rgba(0, 0, 0, 0.5); /* Un petit fond sombre pour voir le menu */
+    padding: 15px;
+}
+
+.navbar a {
+    color: var(--accent-green);
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+/* --- SPECIFIQUE PAGE CONTACT --- */
+.contact-link {
+    color: var(--text-blue);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.contact-link:hover {
+    color: var(--accent-green);
+}
+
+.map-container {
+    margin-top: 15px;
+    filter: grayscale(1) invert(1); /* Optionnel : pour que la carte soit sombre et assortie au site */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.social-list {
+    list-style: none;
+    padding: 0;
+}
+
+.social-list li {
+    margin-bottom: 10px;
+}
+
+.social-list a {
+    color: var(--text-blue);
+    text-decoration: none;
+    border: 1px solid var(--text-blue);
+    padding: 5px 15px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.social-list a:hover {
+    background: var(--text-blue);
+    color: black;
+}
+
+/* Style pour la liste ordonnée des étapes */
+ol li {
+    margin-bottom: 12px;
+    padding-left: 5px;
+}
+.service-card {
+    background: rgba(0, 0, 0, 0.4); /* Fond sombre translucide */
+    padding: 25px;
+    border-radius: 15px;
+    margin: 20px 0;
+    border: 1px solid var(--text-blue); /* Ta bordure bleue */
+    text-align: left; /* Plus facile à lire pour de longs textes */
+    backdrop-filter: blur(8px); /* Flou derrière la carte pour le style */
+}

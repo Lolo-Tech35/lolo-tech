@@ -1,0 +1,89 @@
+/* --- VARIABLES ET RESET --- */
+:root {
+    --text-blue: #69faff;
+    --accent-green: #33ff33;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: var(--text-blue);
+    /* On remet l'image de fond ici */
+    background: #fff url('arriere_plan_vide_lolotech.png') no-repeat center center fixed;
+    background-size: cover;
+}
+.logo {
+    width: 300px; /* Un peu plus petit pour la lisibilité */
+    height: auto;
+    margin-top: 20px;
+}
+/* --- NAVIGATION --- */
+.navbar {
+    background: rgba(0, 0, 0, 0.5); /* Un petit fond sombre pour voir le menu */
+    padding: 15px;
+}
+
+.navbar a {
+    color: var(--accent-green);
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+/* --- SERVICES GRID (Mode Liste Verticale) --- */
+.services-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- LE STYLE CARD QUE TU AS DEMANDÉ --- */
+.service-card {
+    background: rgba(0, 0, 0, 0.3); /* Lisibilité sur image */
+    padding: 20px;
+    border-radius: 15px;
+    margin: 10px 0;
+    border: 1px solid var(--text-blue); /* Ta bordure fine bleue */
+    backdrop-filter: blur(5px); /* Optionnel : petit effet de flou classe */
+}
+
+.service-card h2 {
+    color: var(--accent-green);
+    border-bottom: 1px solid rgba(105, 250, 255, 0.2);
+    padding-bottom: 10px;
+}
+
+.pose-info {
+    margin-top: 15px;
+    font-weight: bold;
+    color: var(--accent-green);
+    text-align: right;
+    font-size: 0.9rem;
+}
+
+/* On change un peu la couleur de la carte "À savoir" pour qu'elle se distingue */
+.note-card {
+    border-style: dashed;
+    background: rgba(105, 250, 255, 0.05);
+}
+/* --- BOUTON --- */
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: var(--accent-green);
+    color: black;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 30px;
+    transition: 0.3s;
+}
+.btn:hover { transform: scale(1.1); background: white; }

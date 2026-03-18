@@ -1,0 +1,86 @@
+/* --- VARIABLES ET RESET --- */
+:root {
+    --text-blue: #69faff;
+    --accent-green: #33ff33;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: var(--text-blue);
+    /* On remet l'image de fond ici */
+    background: #fff url('arriere_plan_vide_lolotech.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* --- NAVIGATION --- */
+.navbar {
+    background: rgba(0, 0, 0, 0.5); /* Un petit fond sombre pour voir le menu */
+    padding: 15px;
+}
+
+.navbar a {
+    color: var(--accent-green);
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* --- CONTENU --- */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.logo {
+    width: 300px; /* Un peu plus petit pour la lisibilité */
+    height: auto;
+    margin-top: 20px;
+}
+
+h1, h2 {
+    margin: 10px 0;
+}
+
+.highlight {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 30px 0;
+}
+
+.bio {
+    background: rgba(0, 0, 0, 0.3); /* Boîte pour rendre le texte lisible sur l'image */
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px 0;
+}
+
+.link-more {
+    color: var(--text-blue);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #007bff;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
