@@ -69,7 +69,9 @@ body {
     border: 1px solid var(--text-blue);
     padding: 5px 15px;
     border-radius: 5px;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     transition: 0.3s;
 }
 
