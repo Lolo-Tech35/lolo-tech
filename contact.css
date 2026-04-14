@@ -85,12 +85,47 @@ ol li {
     margin-bottom: 12px;
     padding-left: 5px;
 }
+   .services-grid {
+    display: flex;
+    flex-direction: row; /* Aligne les cartes en ligne */
+    flex-wrap: wrap;     /* Permet de passer à la ligne s'il n'y a plus de place */
+    justify-content: center; /* Centre les cartes horizontalement */
+    gap: 20px;           /* Espace entre les cartes */
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* On limite la largeur des cartes pour qu'elles puissent se mettre à côté */
 .service-card {
-    background: rgba(0, 0, 0, 0.4); /* Fond sombre translucide */
+    background: rgba(0, 0, 0, 0.6);
     padding: 25px;
     border-radius: 15px;
-    margin: 20px 0;
-    border: 1px solid var(--text-blue); /* Ta bordure bleue */
-    text-align: left; /* Plus facile à lire pour de longs textes */
-    backdrop-filter: blur(8px); /* Flou derrière la carte pour le style */
+    border: 1px solid var(--text-blue);
+    
+    /* C'est ici que ça se joue : */
+    width: 350px;       /* Largeur fixe pour les cartes */
+    min-width: 300px;   /* Largeur minimum */
+    
+    text-align: left;
+    transition: 0.3s ease;
+    backdrop-filter: blur(8px);
+    box-sizing: border-box; /* Pour que le padding ne fasse pas grandir la carte */
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px var(--text-blue);
+    border-color: var(--accent-green);
+}
+
+.service-card h2 {
+    color: var(--accent-green);
+    font-size: 1.3rem;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid rgba(105, 250, 255, 0.2);
+    padding-bottom: 10px;
 }
