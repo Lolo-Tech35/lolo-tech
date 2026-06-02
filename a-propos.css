@@ -19,47 +19,65 @@ body {
     height: auto;
     margin-top: 20px;
 }
-/* --- NAVIGATION FUTURISTE --- */
+/* --- NAVIGATION FUTURISTE ADAPTÉE MOBILE --- */
 .navbar {
-    background: rgba(0, 0, 0, 0.75); /* Fond noir semi-transparent */
-    padding: 18px 10px;
-    backdrop-filter: blur(10px);    /* Effet flou ultra moderne en arrière-plan */
-    border-bottom: 1px solid rgba(105, 250, 255, 0.2); /* Ligne fine bleue sous le menu */
+    background: rgba(0, 0, 0, 0.8); /* Fond sombre */
+    padding: 12px 5px;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(105, 250, 255, 0.2);
     display: flex;
-    justify-content: center;
-    gap: 10px; /* Espace régulier entre les boutons */
-    position: sticky; /* Reste fixé en haut au défilement (optionnel mais cool) */
+    justify-content: center; /* Centre les liens */
+    align-items: center;
+    gap: 5px; /* Espace réduit pour que tout tienne sur une ligne */
+    position: sticky;
     top: 0;
     z-index: 1000;
 }
 
 .navbar a {
     color: var(--accent-green);
-    margin: 0 5px;
     text-decoration: none;
     font-weight: bold;
-    padding: 8px 16px;
-    border-radius: 8px;
-    transition: all 0.3s ease; /* Animation fluide */
-    font-size: 1rem;
+    padding: 6px 10px; /* Padding réduit pour le mobile */
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    font-size: 0.85rem; /* Texte légèrement plus petit pour pas que ça bug */
     border: 1px solid transparent;
+    white-space: nowrap; /* Empêche le texte de se couper en deux */
 }
 
-/* Effet au survol des liens (Glow) */
+/* Effet au survol (PC) */
 .navbar a:hover {
     color: var(--text-blue);
     background: rgba(105, 250, 255, 0.05);
     border-color: var(--text-blue);
-    box-shadow: 0 0 15px rgba(105, 250, 255, 0.4);
-    text-shadow: 0 0 5px var(--text-blue);
+    box-shadow: 0 0 10px rgba(105, 250, 255, 0.3);
 }
 
-/* Classe pour la page active (où on se trouve) */
+/* Version mobile de la page active (Plus discret et élégant) */
 .navbar a.active {
-    color: black;
-    background: var(--accent-green);
-    box-shadow: 0 0 15px var(--accent-green);
-    border-color: var(--accent-green);
+    color: var(--text-blue);
+    border-bottom: 2px solid var(--text-blue); /* Juste une belle barre bleue en dessous */
+    font-weight: 900;
+}
+
+/* Ajustements automatiques pour les grands écrans (PC) */
+@media (min-width: 600px) {
+    .navbar {
+        gap: 15px;
+        padding: 15px;
+    }
+    .navbar a {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+    .navbar a.active {
+        color: black;
+        background: var(--accent-green);
+        box-shadow: 0 0 15px var(--accent-green);
+        border-color: var(--accent-green);
+        border-bottom: 1px solid var(--accent-green);
+    }
 }
 /* --- STYLE DES CARTES (À mettre dans index.css) --- */
 .service-card {
