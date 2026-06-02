@@ -19,21 +19,47 @@ body {
     height: auto;
     margin-top: 20px;
 }
-/* --- NAVIGATION --- */
+/* --- NAVIGATION FUTURISTE --- */
 .navbar {
-    background: rgba(0, 0, 0, 0.5); /* Un petit fond sombre pour voir le menu */
-    padding: 15px;
+    background: rgba(0, 0, 0, 0.75); /* Fond noir semi-transparent */
+    padding: 18px 10px;
+    backdrop-filter: blur(10px);    /* Effet flou ultra moderne en arrière-plan */
+    border-bottom: 1px solid rgba(105, 250, 255, 0.2); /* Ligne fine bleue sous le menu */
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espace régulier entre les boutons */
+    position: sticky; /* Reste fixé en haut au défilement (optionnel mais cool) */
+    top: 0;
+    z-index: 1000;
 }
 
 .navbar a {
     color: var(--accent-green);
-    margin: 0 15px;
+    margin: 0 5px;
     text-decoration: none;
     font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease; /* Animation fluide */
+    font-size: 1rem;
+    border: 1px solid transparent;
 }
 
+/* Effet au survol des liens (Glow) */
 .navbar a:hover {
-    text-decoration: underline;
+    color: var(--text-blue);
+    background: rgba(105, 250, 255, 0.05);
+    border-color: var(--text-blue);
+    box-shadow: 0 0 15px rgba(105, 250, 255, 0.4);
+    text-shadow: 0 0 5px var(--text-blue);
+}
+
+/* Classe pour la page active (où on se trouve) */
+.navbar a.active {
+    color: black;
+    background: var(--accent-green);
+    box-shadow: 0 0 15px var(--accent-green);
+    border-color: var(--accent-green);
 }
 /* Conteneur pour aligner les blocs proprement */
 .tarifs-container {
