@@ -243,3 +243,96 @@ ol li {
     border-bottom: 1px solid rgba(105, 250, 255, 0.2);
     padding-bottom: 10px;
 }
+/* --- INTEGRATION DU CALENDRIER DANS LA CARTE --- */
+/* --- INTEGRATION DU CALENDRIER DANS LA CARTE --- */
+.calendar-box {
+    margin-top: 60px; /* Passé de 20px à 60px pour bien descendre le calendrier */
+    padding-top: 15px;
+    border-top: 1px solid rgba(105, 250, 255, 0.2); /* Ligne de séparation fine */
+    font-family: 'Inter', sans-serif;
+}
+
+.calendar-box h3 {
+    font-size: 1rem;
+    color: var(--text-blue);
+    text-align: center;
+    margin: 0 0 15px 0;
+    text-transform: uppercase;
+}
+
+/* Grille de 7 colonnes égales */
+.calendar-weekdays, .calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    gap: 5px;
+}
+
+.calendar-weekdays {
+    font-weight: bold;
+    color: #777;
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+}
+
+/* Chaque case jour */
+.calendar-day {
+    font-size: 0.85rem;
+    padding: 6px 0;
+    border-radius: 4px;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Jours vides du mois précédent */
+.calendar-day-empty {
+    background: transparent;
+    border: none;
+}
+
+/* Couleurs selon tes dispos */
+.calendar-day.dispo {
+    border-color: var(--accent-green);
+    color: var(--accent-green);
+    background: rgba(51, 255, 51, 0.03);
+}
+
+.calendar-day.occupe {
+    border-color: #ff3333;
+    color: #ff3333;
+    background: rgba(255, 51, 51, 0.03);
+    opacity: 0.4;
+}
+
+/* Jour actuel ciblé par le script */
+.calendar-day.today {
+    background: var(--text-blue) !important;
+    color: #000 !important;
+    font-weight: 900;
+    box-shadow: 0 0 10px var(--text-blue);
+}
+
+/* Légende sous le calendrier */
+.calendar-legend {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+    font-size: 0.75rem;
+    color: #aaa;
+}
+
+.calendar-legend span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.calendar-legend .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+.calendar-legend .dot.dispo { background: var(--accent-green); }
+.calendar-legend .dot.occupe { background: #ff3333; }
