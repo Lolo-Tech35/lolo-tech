@@ -38,7 +38,47 @@ h1, h2, h3, .logo-text {
     top: 0;
     z-index: 1000;
 }
+/* --- BOUTON RETOUR EN HAUT (STYLE GLOW) --- */
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: rgba(0, 0, 0, 0.8);
+    color: var(--text-blue);
+    border: 1px solid var(--text-blue);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    
+    /* Masqué au chargement */
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.8);
+}
 
+/* Classe d'apparition gérée par le JS */
+.back-to-top.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+    box-shadow: 0 0 15px var(--text-blue);
+}
+
+/* Effet au survol */
+.back-to-top:hover {
+    color: var(--accent-green);
+    border-color: var(--accent-green);
+    box-shadow: 0 0 20px var(--accent-green);
+    transform: translateY(-3px);
+}
 .navbar a {
     color: var(--accent-green);
     text-decoration: none;
@@ -106,6 +146,9 @@ h1, h2, h3, .logo-text {
 .social-list {
     list-style: none;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .social-list li {
@@ -116,17 +159,35 @@ h1, h2, h3, .logo-text {
     color: var(--text-blue);
     text-decoration: none;
     border: 1px solid var(--text-blue);
-    padding: 5px 15px;
-    border-radius: 5px;
+    padding: 12px 20px;
+    border-radius: 8px;
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    transition: 0.3s;
+    gap: 15px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    background: rgba(105, 250, 255, 0.02);
+    
+    /* Transition cruciale pour que l'animation soit fluide et pas brute */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
 .social-list a:hover {
-    background: var(--text-blue);
-    color: black;
+    background: rgba(105, 250, 255, 0.1);
+    color: var(--accent-green);
+    border-color: var(--accent-green);
+    box-shadow: 0 0 15px rgba(51, 255, 51, 0.4);
+    transform: translateX(5px); /* Le bouton glisse légèrement vers la droite */
+}
+/* Ciblage de l'icône Font Awesome à l'intérieur du bouton */
+.social-list a i {
+    font-size: 1.3rem;
+    transition: transform 0.4s ease; /* Transition spécifique pour la rotation */
+}
+
+/* Quand on survole le lien, l'icône à l'intérieur tourne */
+.social-list a:hover i {
+    transform: rotate(360deg); /* Rotation complète de l'icône */
 }
 
 /* Style pour la liste ordonnée des étapes */

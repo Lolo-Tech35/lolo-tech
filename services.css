@@ -38,6 +38,47 @@ h1, h2, h3, .logo-text {
     top: 0;
     z-index: 1000;
 }
+/* --- BOUTON RETOUR EN HAUT (STYLE GLOW) --- */
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: rgba(0, 0, 0, 0.8);
+    color: var(--text-blue);
+    border: 1px solid var(--text-blue);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    
+    /* Masqué au chargement */
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.8);
+}
+
+/* Classe d'apparition gérée par le JS */
+.back-to-top.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+    box-shadow: 0 0 15px var(--text-blue);
+}
+
+/* Effet au survol */
+.back-to-top:hover {
+    color: var(--accent-green);
+    border-color: var(--accent-green);
+    box-shadow: 0 0 20px var(--accent-green);
+    transform: translateY(-3px);
+}
 
 .navbar a {
     color: var(--accent-green);
